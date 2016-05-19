@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数接收参数并弹出</title>
+    <style>
+        body{
+            font-size: 12px;
+            font-family: "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;
+            text-align: center;
+        }
+        input{
+            border: 1px solid #ccc;
+            padding: 3px;
+            border-radius: 5px;
+        }
+        button{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var myfn=function(a,b){
+            alert(a.value);
+            alert(b.value);
+        };
+        window.onload= function () {
+            var oInput=document.getElementsByTagName("input");
+            var oBtn=document.getElementsByTagName("button");
+            oBtn[0].onclick= function () {
+                myfn(oInput[0],oInput[1])
+            }
+        };
+    </script>
+</head>
+<br>
+    <input type="text" value="陕西省"/></br></br>
+    <input type="text" value="西安市"/></br></br>
+    <button>传参</button>
+</body>
+</html>

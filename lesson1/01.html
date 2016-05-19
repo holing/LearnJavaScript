@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson1-index1控制div属性</title>
+    <style>
+        #outer{
+            width: 500px;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+        }
+        #div1{
+            width:  100px;
+            height: 100px;
+            background-color: #010101;
+            margin: 10px auto;
+            display: block;
+        }
+    </style>
+    <script>
+        var changeStyle=function(elem,attr,value){
+            elem.style[attr]=value;
+            //元素elem的属性attr的样式style的取值为value
+        };
+
+        window.onload= function () {
+            //定义oBtn，通过input标签名查找元素
+            var oBtn=document.getElementsByTagName("input");
+            //定义oDiv，通过id为div1查找元素
+            var oDiv=document.getElementById("div1");
+            //定义oAtt，属性格式如下，定义oVal，对应属性的取值（对应于变宽、变高、改变颜色、隐藏、重置）
+            var oAtt=["width","height","background-color","display","display"];
+            var oVal=["200px","200px","red","none","block"];
+
+            for(var i=0;i<oBtn.length;i++){
+                //optionObject.index,index 属性可返回下拉列表中选项的索引位置。
+                oBtn[i].index=i;
+                oBtn[i].onclick= function () {
+                    //这里的this代表当前的btn，当this.index等于4时，后面的oDiv.style.cssText = ""这句会执行
+                    //cssText 的本质就是设置 HTML 元素的 style 属性值,此句相当于初始化oDiv.style
+                    if(this.index==oBtn.length-1){
+                        oDiv.style.cssText="";
+                    }
+                    //this.index==oBtn.length-1&&(oDiv.style.cssText="");
+                    //改变样式，oDiv的属性oAtt[this.index]样式改为oVal[this.index]
+                    changeStyle(oDiv,oAtt[this.index],oVal[this.index]);
+                }
+
+            }
+        };
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <input type="button" value="变宽"/>
+        <input type="button" value="变高"/>
+        <input type="button" value="变色"/>
+        <input type="button" value="隐藏"/>
+        <input type="button" value="重置"/>
+    </div>
+    <div id="div1"></div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标移入移出</title>
+    <style>
+        p{
+            text-align: center;
+        }
+        #div1{
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: black;
+            color: #fff;
+            font-size: 12px;
+            border: 10px solid black;
+        }
+        #div1:hover{
+            color: red;
+            border: 10px solid red;
+            background-color: #f2f2f2;
+        }
+
+        #div2{
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: black;
+            color: #fff;
+            font-size: 12px;
+            border: 10px solid black;
+        }
+        #div2.hover{
+            color: red;
+            border: 10px solid red;
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+        window.onload = function ()
+        {
+            var oDiv = document.getElementById("div2");
+            oDiv.onmouseover = function ()
+            {
+                oDiv.className = "hover"
+            };
+            oDiv.onmouseout = function ()
+            {
+                oDiv.className = ""
+            }
+        };
+
+
+    </script>
+</head>
+<body>
+    <p>css实现hover</p>
+    <div id="div1">鼠标移入改变样式，鼠标移出恢复。</div>
+    <p>js实现.hover实现</p>
+    <div id="div2">鼠标移入改变样式，鼠标移出恢复。</div>
+</body>
+</html>
+
+
