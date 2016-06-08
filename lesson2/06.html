@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片列表：鼠标移入/移出改变图片透明度</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+        #imgList{
+            width: 700px;
+            border: 1px solid black;
+            margin: 7px auto;
+            padding: 0 0 10px 10px;
+            overflow: hidden;
+        }
+        #imgList li{
+            float:left;
+            width:128px;
+            height:128px;
+            border:1px solid #ccc;
+            margin:10px 10px 0 0;
+        }
+        .before{
+            float:left;
+            opacity:0.3;
+            cursor:pointer;
+            /*filter:alpha(opacity=30);*/
+        }
+        .current{
+            opacity:1;
+            /*filter:alpha(opacity=100);*/
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oLi=document.getElementsByTagName("li");
+            for(var i=0;i<oLi.length;i++){
+                oLi[i].onmouseover= function () {
+                    this.className="current";
+                };
+                oLi[i].onmouseout= function () {
+                    this.className="before";
+                };
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="imgList">
+        <li class="before"><img src="image/1.jpg" ></li>
+        <li class="before"><img src="image/2.jpg" ></li>
+        <li class="before"><img src="image/3.jpg" ></li>
+        <li class="before"><img src="image/4.jpg" ></li>
+        <li class="before"><img src="image/1.jpg" ></li>
+        <li class="before"><img src="image/2.jpg" ></li>
+        <li class="before"><img src="image/3.jpg" ></li>
+        <li class="before"><img src="image/4.jpg" ></li>
+        <li class="before"><img src="image/1.jpg" ></li>
+        <li class="before"><img src="image/2.jpg" ></li>
+        <li class="before"><img src="image/3.jpg" ></li>
+        <li class="before"><img src="image/4.jpg" ></li>
+
+    </ul>
+
+</body>
+</html>
