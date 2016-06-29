@@ -2,9 +2,126 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>index</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 12px;
+        }
+        #outer{
+            width:450px;
+            margin: 10px auto;
+        }
+        #tab{
+           /*rgb(68,135,224);蓝色
+           rgb(239,238,244);米白色
+           */
+            background: rgb(239,238,244);
+            border: 1px solid rgb(239,238,244);
+            zoom: 1;
+            overflow: hidden;
+        }
+        #tab li{
+            float: left;
+            color: rgb(68,135,224);;
+            height:30px;
+            padding: 0 20px;
+            cursor: pointer;
+            line-height: 30px;
+            list-style-type: none;
+        }
+        #tab li.current{
+            color: rgb(239,238,244);
+            background-color: rgb(68,135,224);;
+        }
+        #content{
+            border: 1px solidrgb(239,238,244);;
+
+        }
+        #content ul{
+            line-height:25px;
+            display:none;
+            margin:0 30px;
+            padding:10px 0;
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+            var oLi=document.getElementById("tab").getElementsByTagName("li");
+            var oUl=document.getElementById("content").getElementsByTagName("ul");
+            for(var i=0;i<oLi.length;i++){
+                oLi[i].index=i;
+
+                oLi[i].onmouseover=function(){
+                    //鼠标移动到tab的li中某一个时，先使得所有选项卡为默认，设置当前class为current
+                    for(var n=0;n<oLi.length;n++){
+                        oLi[n].className="";
+                    }
+                    this.className="current";
+
+                    //调整其样式使得其block显示
+                    for(var n=0;n<oLi.length;n++){
+                        oUl[n].style.display="none";
+                    }
+
+                    oUl[this.index].style.display="block";
+                }
+            }
+        }
+    </script>
 </head>
 <body>
+    <div id="outer">
+        <ul id="tab">
+            <li class="current">第1课</li>
+            <li>第2课</li>
+            <li>第3课</li>
+
+
+        </ul>
+
+        <div id="content">
+            <ul style="display:block;">
+                <li><a href="lesson1/01.html">控制div属性</a> </li>
+                <li><a href="lesson1/02/02.html">网页换肤</a></li>
+                <li><a href="lesson1/03.html">函数接收参数并弹出</a></li>
+                <li><a href="lesson1/04.html">用循环将三个Div变成红色</a></li>
+                <li><a href="lesson1/05.html">鼠标移入、移出改变样式</a></li>
+                <li><a href="lesson1/06.html">记住密码提示框</a></li>
+
+            </ul>
+            <ul>
+                <li><a href="lesson2/01.html">百度输入法</a></li>
+                <li><a href="lesson2/02.html">点击Div，显示其innerHTML</a></li>
+                <li><a href="lesson2/03.html">求出数组中所有数字的和</a></li>
+                <li><a href="lesson2/04.html">弹出层效果</a></li>
+                <li><a href="lesson2/05.html">函数传参，改变Div任意属性的值</a></li>
+                <li><a href="lesson2/06.html">图片列表：鼠标移入/移出改变图片透明度</a></li>
+                <li><a href="lesson2/07.html">简易选项卡</a></li>
+                <li><a href="lesson2/08.html">简易JS年历</a></li>
+                <li><a href="lesson2/09.html">单一按钮显示/隐藏一播放列表收缩展开</a></li>
+                <li><a href="lesson2/10.html">提示框效果</a></li>
+                <li><a href="lesson2/11.html">鼠标移过，修改图片路径</a></li>
+                <li><a href="lesson2/12.html">复选框（checkbox）全选/全不选/返选</a></li>
+
+            </ul>
+            <ul>
+                <li><a href="lesson3/01.html">百度输入法</a></li>
+                <li><a href="lesson3/02.html">点击Div，显示其innerHTML</a></li>
+                <li><a href="lesson3/03.html">求出数组中所有数字的和</a></li>
+                <li><a href="lesson3/04.html">弹出层效果</a></li>
+                <li><a href="lesson3/05.html">函数传参，改变Div任意属性的值</a></li>
+                <li><a href="lesson3/06.html">图片列表：鼠标移入/移出改变图片透明度</a></li>
+                <li><a href="lesson3/07.html">简易选项卡</a></li>
+                <li><a href="lesson3/08.html">简易JS年历</a></li>
+                <li><a href="lesson3/09.html">单一按钮显示/隐藏一播放列表收缩展开</a></li>
+            </ul>
+        </div>
+    </div>
 
 </body>
 </html>
